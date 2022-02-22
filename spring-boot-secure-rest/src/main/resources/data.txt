@@ -25,7 +25,7 @@ INSERT INTO oauth_client_details (client_id, client_secret, web_server_redirect_
  /*
  passowrds:
  admin - admin
- ahasan - ahasan
+ sam - sam
  user - user
  */
 
