@@ -20,9 +20,9 @@ public class EmployeeEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	//@Size(max = 5, min = 1, message = "employee id must be equal or less than '{max}'")
+	@Size(max = 5, min = 1, message = "employee id must be equal or less than '{max}'")
 	@Column(name = "emp_id", updatable = true, nullable = false)
-	private Integer employeeId;
+	private Long employeeId;
 
 	@Size(max = 10, min = 2, message = "employee first name must be equal or less than '{max}'")
 	@Column(name = "emp_firstname", updatable = true, nullable = false)
@@ -32,7 +32,7 @@ public class EmployeeEntity {
 	@Column(name = "emp_lastname", updatable = true, nullable = true)
 	private String employeeLastName;
 
-	@Size(max = 6, min = 4, message = "employee gender must be equal or less than '{max}'")
+	@Size(max = 6, min = 4, message = "employee gender must be between 4 to 6 chars")
 	@Column(name = "emp_gender", updatable = true, nullable = false)
 	private String employeeGender;
 
@@ -40,6 +40,7 @@ public class EmployeeEntity {
 	@Column(name = "emp_phone", unique = true, nullable = false)
 	private String employeePhone;
 
+	//@Size(max = 4, min = 6, message = "Newemployee must be equal or less than '{max}'")
 	@Column(name = "isNewEmployee", unique = true, nullable = false)
 	private Boolean isNewEmployee;
 
@@ -51,11 +52,11 @@ public class EmployeeEntity {
 		this.isNewEmployee = isNewEmployee;
 	}
 
-	public Integer getEmployeeId() {
+	public Long getEmployeeId() {
 		return employeeId;
 	}
 
-	public void setEmployeeId(Integer employeeId) {
+	public void setEmployeeId(Long employeeId) {
 		this.employeeId = employeeId;
 	}
 
